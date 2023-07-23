@@ -1,0 +1,606 @@
+.SS-newElement {
+	-webkit-user-modify: read-write !important;
+	/* make a light blue outline */
+	outline: 1px solid #b3d4fc !important;
+}
+
+.SS-icon {
+	width: 1rem;
+	height: 1rem;
+	vertical-align: -0.125rem;
+}
+
+.SS-styles {
+	/* disable any properties from parent elements */
+	all: unset;
+
+	/* set the properties we want */
+	position: absolute;
+	z-index: 9999999;
+	display: flex;
+	gap: 0.2rem;
+
+	/* DONT TOUCH */
+	/* DAISY UI */
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	color-scheme: dark;
+	--pf: 198.44 93.204% 47.686%;
+	--sf: 234.45 89.474% 59.137%;
+	--af: 328.85 85.621% 56%;
+	--b2: 222.22 47.368% 10.059%;
+	--b3: 222.22 47.368% 9.0529%;
+	--bc: 222.22 65.563% 82.235%;
+	--pc: 198.44 100% 11.922%;
+	--sc: 234.45 100% 14.784%;
+	--ac: 328.85 100% 14%;
+	--nc: 217.24 75.772% 83.49%;
+	--inc: 198.46 100% 9.6078%;
+	--suc: 172.46 100% 10.078%;
+	--wac: 40.61 100% 12.706%;
+	--erc: 350.94 100% 14.235%;
+	--rounded-box: 1rem;
+	--rounded-btn: 0.5rem;
+	--rounded-badge: 1.9rem;
+	--animation-btn: 0.25s;
+	--animation-input: 0.2s;
+	--btn-text-case: uppercase;
+	--btn-focus-scale: 0.95;
+	--border-btn: 1px;
+	--tab-border: 1px;
+	--tab-radius: 0.5rem;
+	--p: 198.44 93.204% 59.608%;
+	--s: 234.45 89.474% 73.922%;
+	--a: 328.85 85.621% 70%;
+	--n: 217.24 32.584% 17.451%;
+	--nf: 217.06 30.357% 21.961%;
+	--b1: 222.22 47.368% 11.176%;
+	--in: 198.46 90.204% 48.039%;
+	--su: 172.46 66.008% 50.392%;
+	--wa: 40.61 88.172% 63.529%;
+	--er: 350.94 94.558% 71.176%;
+}
+
+/* FROM DAISYUI */
+/* NO NEED TO TOUCH */
+@keyframes button-pop {
+	0% {
+		transform: scale(0.95);
+	}
+	40% {
+		transform: scale(1.02);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+.SSbtn {
+	cursor: pointer;
+	-webkit-user-select: none;
+	user-select: none;
+	/* border-color: #0000; */
+	border-color: hsl(var(--n) / var(--tw-border-opacity));
+	text-align: center;
+	border-radius: var(--rounded-btn, 0.5rem);
+	height: 3rem;
+	min-height: 3rem;
+	text-transform: uppercase;
+	text-transform: var(--btn-text-case, uppercase);
+	border-width: var(--border-btn, 1px);
+	animation: button-pop var(--animation-btn, 0.25s) ease-out;
+	--tw-border-opacity: 1;
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--n) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--nc) / var(--tw-text-opacity));
+	flex-wrap: wrap;
+	flex-shrink: 0;
+	justify-content: center;
+	align-items: center;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1em;
+	-webkit-text-decoration-line: none;
+	text-decoration-line: none;
+	transition-property: color, background-color, border-color, -webkit-text-decoration-color, text-decoration-color, fill, stroke, opacity, box-shadow,
+		transform, filter, backdrop-filter;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	display: inline-flex;
+}
+.SSbtn-disabled,
+.SSbtn[disabled] {
+	pointer-events: none;
+}
+.SSbtn-square {
+	height: 3rem;
+	width: 3rem;
+	padding: 0;
+}
+.SSbtn-circle {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 9999px;
+	padding: 0;
+}
+.SSbtn.loading,
+.SSbtn.loading:hover {
+	pointer-events: none;
+}
+.SS-SSbtn-btn.loading:before {
+	height: 1rem;
+	width: 1rem;
+	content: "";
+	border-radius: 9999px;
+	border-width: 2px;
+	border-color: #0000 currentColor currentColor #0000;
+	margin-right: 0.5rem;
+	animation: spin 2s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+	.SSbtn.loading:before {
+		animation: spin 10s linear infinite;
+	}
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.SSbtn:active:hover,
+.SSbtn:active:focus {
+	transform: scale(var(--btn-focus-scale, 0.95));
+	animation: none;
+}
+.SSbtn:hover,
+.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--nf, var(--n)) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--nf, var(--n)) / var(--tw-bg-opacity));
+}
+.SSbtn:focus-visible {
+	outline: 2px solid hsl(var(--nf));
+	outline-offset: 2px;
+}
+.SSbtn-primary {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--p) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--p) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--pc) / var(--tw-text-opacity));
+}
+.SSbtn-primary:hover,
+.SSbtn-primary.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--pf, var(--p)) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
+}
+.SSbtn-primary:focus-visible {
+	outline: 2px solid hsl(var(--p));
+}
+.SSbtn-secondary {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--s) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--s) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--sc) / var(--tw-text-opacity));
+}
+.SSbtn-secondary:hover,
+.SSbtn-secondary.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--sf, var(--s)) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--sf, var(--s)) / var(--tw-bg-opacity));
+}
+.SSbtn-secondary:focus-visible {
+	outline: 2px solid hsl(var(--s));
+}
+.SSbtn-accent {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--a) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--a) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--ac) / var(--tw-text-opacity));
+}
+.SSbtn-accent:hover,
+.SSbtn-accent.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--af, var(--a)) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--af, var(--a)) / var(--tw-bg-opacity));
+}
+.SSbtn-accent:focus-visible {
+	outline: 2px solid hsl(var(--a));
+}
+.SSbtn-info {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--in) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--in) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--inc, var(--nc)) / var(--tw-text-opacity));
+}
+.SSbtn-info:hover,
+.SSbtn-info.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--in) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--in) / var(--tw-bg-opacity));
+}
+.SSbtn-info:focus-visible {
+	outline: 2px solid hsl(var(--in));
+}
+.SSbtn-success {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--su) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--su) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--suc, var(--nc)) / var(--tw-text-opacity));
+}
+.SSbtn-success:hover,
+.SSbtn-success.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--su) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--su) / var(--tw-bg-opacity));
+}
+.SSbtn-success:focus-visible {
+	outline: 2px solid hsl(var(--su));
+}
+.SSbtn-warning {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--wa) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--wa) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--wac, var(--nc)) / var(--tw-text-opacity));
+}
+.SSbtn-warning:hover,
+.SSbtn-warning.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--wa) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--wa) / var(--tw-bg-opacity));
+}
+.SSbtn-warning:focus-visible {
+	outline: 2px solid hsl(var(--wa));
+}
+.SSbtn-error {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--er) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--er) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--erc, var(--nc)) / var(--tw-text-opacity));
+}
+.SSbtn-error:hover,
+.SSbtn-error.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--er) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--er) / var(--tw-bg-opacity));
+}
+.SSbtn-error:focus-visible {
+	outline: 2px solid hsl(var(--er));
+}
+.SSbtn.glass:hover,
+.SSbtn.glass.SSbtn-active {
+	--glass-opacity: 25%;
+	--glass-border-opacity: 15%;
+}
+.SSbtn.glass:focus-visible {
+	outline: 2px solid;
+}
+.SSbtn-ghost {
+	color: currentColor;
+	background-color: #0000;
+	border-width: 1px;
+	border-color: #0000;
+}
+.SSbtn-ghost:hover,
+.SSbtn-ghost.SSbtn-active {
+	--tw-border-opacity: 0;
+	background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+	--tw-bg-opacity: 0.2;
+}
+.SSbtn-ghost:focus-visible {
+	outline: 2px solid;
+}
+.SSbtn-link {
+	--tw-text-opacity: 1;
+	color: hsl(var(--p) / var(--tw-text-opacity));
+	background-color: #0000;
+	border-color: #0000;
+	-webkit-text-decoration-line: underline;
+	text-decoration-line: underline;
+}
+.SSbtn-link:hover,
+.SSbtn-link.SSbtn-active {
+	background-color: #0000;
+	border-color: #0000;
+	-webkit-text-decoration-line: underline;
+	text-decoration-line: underline;
+}
+.SSbtn-link:focus-visible {
+	outline: 2px solid;
+}
+.SSbtn-outline {
+	--tw-text-opacity: 1;
+	color: hsl(var(--bc) / var(--tw-text-opacity));
+	background-color: #0000;
+	border-color: currentColor;
+}
+.SSbtn-outline:hover,
+.SSbtn-outline.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--bc) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--b1) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-primary {
+	--tw-text-opacity: 1;
+	color: hsl(var(--p) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-primary:hover,
+.SSbtn-outline.SSbtn-primary.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--pf, var(--p)) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--pc) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-secondary {
+	--tw-text-opacity: 1;
+	color: hsl(var(--s) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-secondary:hover,
+.SSbtn-outline.SSbtn-secondary.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--sf, var(--s)) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--sf, var(--s)) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--sc) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-accent {
+	--tw-text-opacity: 1;
+	color: hsl(var(--a) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-accent:hover,
+.SSbtn-outline.SSbtn-accent.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--af, var(--a)) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--af, var(--a)) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--ac) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-success {
+	--tw-text-opacity: 1;
+	color: hsl(var(--su) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-success:hover,
+.SSbtn-outline.SSbtn-success.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--su) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--su) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--suc, var(--nc)) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-info {
+	--tw-text-opacity: 1;
+	color: hsl(var(--in) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-info:hover,
+.SSbtn-outline.SSbtn-info.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--in) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--in) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--inc, var(--nc)) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-warning {
+	--tw-text-opacity: 1;
+	color: hsl(var(--wa) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-warning:hover,
+.SSbtn-outline.SSbtn-warning.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--wa) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--wa) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--wac, var(--nc)) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-error {
+	--tw-text-opacity: 1;
+	color: hsl(var(--er) / var(--tw-text-opacity));
+}
+.SSbtn-outline.SSbtn-error:hover,
+.SSbtn-outline.SSbtn-error.SSbtn-active {
+	--tw-border-opacity: 1;
+	border-color: hsl(var(--er) / var(--tw-border-opacity));
+	--tw-bg-opacity: 1;
+	background-color: hsl(var(--er) / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: hsl(var(--erc, var(--nc)) / var(--tw-text-opacity));
+}
+.SSbtn-disabled,
+.SSbtn-disabled:hover,
+.SSbtn[disabled],
+.SSbtn[disabled]:hover {
+	--tw-border-opacity: 0;
+	background-color: hsl(var(--n) / var(--tw-bg-opacity));
+	--tw-bg-opacity: 0.2;
+	color: hsl(var(--bc) / var(--tw-text-opacity));
+	--tw-text-opacity: 0.2;
+}
+.SSbtn.loading.SSbtn-square:before,
+.SSbtn.loading.SSbtn-circle:before {
+	margin-right: 0;
+}
+.SSbtn.loading.SSbtn-xl:before,
+.SSbtn.loading.SSbtn-lg:before {
+	height: 1.25rem;
+	width: 1.25rem;
+}
+.SSbtn.loading.SSbtn-sm:before,
+.SSbtn.loading.SSbtn-xs:before {
+	height: 0.75rem;
+	width: 0.75rem;
+}
+.SSbtn-xs {
+	height: 1.5rem;
+	min-height: 1.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	font-size: 0.75rem;
+}
+.SSbtn-sm {
+	height: 2rem;
+	min-height: 2rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	font-size: 0.875rem;
+}
+.SSbtn-md {
+	height: 3rem;
+	min-height: 3rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 0.875rem;
+}
+.SSbtn-lg {
+	height: 4rem;
+	min-height: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	font-size: 1.125rem;
+}
+.SSbtn-wide {
+	width: 16rem;
+}
+.SSbtn-block {
+	width: 100%;
+}
+.SSbtn-square:where(.SSbtn-xs) {
+	height: 1.5rem;
+	width: 1.5rem;
+	padding: 0;
+}
+.SSbtn-square:where(.SSbtn-sm) {
+	height: 2rem;
+	width: 2rem;
+	padding: 0;
+}
+.SSbtn-square:where(.SSbtn-md) {
+	height: 3rem;
+	width: 3rem;
+	padding: 0;
+}
+.SSbtn-square:where(.SSbtn-lg) {
+	height: 4rem;
+	width: 4rem;
+	padding: 0;
+}
+.SSbtn-circle:where(.SSbtn-xs) {
+	height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 9999px;
+	padding: 0;
+}
+.SSbtn-circle:where(.SSbtn-sm) {
+	height: 2rem;
+	width: 2rem;
+	border-radius: 9999px;
+	padding: 0;
+}
+.SSbtn-circle:where(.SSbtn-md) {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 9999px;
+	padding: 0;
+}
+.SSbtn-circle:where(.SSbtn-lg) {
+	height: 4rem;
+	width: 4rem;
+	border-radius: 9999px;
+	padding: 0;
+}
+.SSbtn-group {
+	display: inline-flex;
+}
+
+.SSbtn-group .SSbtn:not(:first-child):not(:last-child) {
+	border-radius: 0;
+}
+.SSbtn-group .SSbtn:first-child:not(:last-child) {
+	border-top-left-radius: var(--rounded-btn, 0.5rem);
+	border-top-right-radius: 0;
+	border-bottom-left-radius: var(--rounded-btn, 0.5rem);
+	border-bottom-right-radius: 0;
+	margin-top: 0;
+	margin-left: -1px;
+}
+.SSbtn-group .SSbtn:last-child:not(:first-child) {
+	border-top-left-radius: 0;
+	border-top-right-radius: var(--rounded-btn, 0.5rem);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: var(--rounded-btn, 0.5rem);
+}
+.SSbtn-group-horizontal .SSbtn:not(:first-child):not(:last-child) {
+	border-radius: 0;
+}
+.SSbtn-group-horizontal .SSbtn:first-child:not(:last-child) {
+	border-top-left-radius: var(--rounded-btn, 0.5rem);
+	border-top-right-radius: 0;
+	border-bottom-left-radius: var(--rounded-btn, 0.5rem);
+	border-bottom-right-radius: 0;
+	margin-top: 0;
+	margin-left: -1px;
+}
+.SSbtn-group-horizontal .SSbtn:last-child:not(:first-child) {
+	border-top-left-radius: 0;
+	border-top-right-radius: var(--rounded-btn, 0.5rem);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: var(--rounded-btn, 0.5rem);
+}
+.SSbtn-group-vertical .SSbtn:first-child:not(:last-child) {
+	border-top-left-radius: var(--rounded-btn, 0.5rem);
+	border-top-right-radius: var(--rounded-btn, 0.5rem);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-top: -1px;
+	margin-left: 0;
+}
+.SSbtn-group-vertical .SSbtn:last-child:not(:first-child) {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: var(--rounded-btn, 0.5rem);
+	border-bottom-right-radius: var(--rounded-btn, 0.5rem);
+}
+
+.SSbtn-group-horizontal {
+	flex-direction: row;
+}
+.SSbtn-group-vertical {
+	flex-direction: column;
+}
