@@ -2,7 +2,21 @@
 
 Elevate your software demos with effortless personalization, real-time customization, and privacy control for any webpage during your sales pitch.
 
-# Current Bugs
+## Install
+
+```
+git clone https://github.com/emerson-smith/SalesSorcery.git
+cd SalesSorcery
+npm install
+npm run dev
+```
+
+Go to Chrome > Manage Extensions
+Turn on Developer Mode (top right)
+Click "Load Unpacked" (top left)
+Load the "build" folder in SalesSorcery
+
+## Current Bugs
 
 1. stuff is getting selected on mouse drag
 2. when text editing span, need to go up a parent
@@ -10,7 +24,7 @@ Elevate your software demos with effortless personalization, real-time customiza
 4. need to get rid of elements that are the same new content as original
 5. multiple overlays saved, wont load
 
-# Unfinished Features
+## Unfinished Features
 
 1. send all edits to popup
 2. hide/show all edits
@@ -19,7 +33,7 @@ Elevate your software demos with effortless personalization, real-time customiza
 5. changable overlay color - done but doesn't save
 6. delete individual edits
 
-# Feature Ideas
+## Feature Ideas
 
 1. switch between url specfic, domain specific
 2. draw on screen
