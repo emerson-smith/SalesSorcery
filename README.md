@@ -11,9 +11,9 @@ npm install
 npm run dev
 ```
 
-Go to Chrome > Manage Extensions
-Turn on Developer Mode (top right)
-Click "Load Unpacked" (top left)
+Go to Chrome > Manage Extensions\n
+Turn on Developer Mode (top right)\n
+Click "Load Unpacked" (top left)\n
 Load the "build" folder in SalesSorcery
 
 ## Current Bugs
